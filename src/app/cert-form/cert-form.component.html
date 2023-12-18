@@ -12,7 +12,7 @@
 
 <div [class.d-none]="submitted" class="card card-primary">
 
-    <div [class.d-none]="submitted" class="card-header"> طلب اشتراك في امتحانت الكولوكيوم</div>
+    <div [class.d-none]="submitted" class="card-header">طلب معادلة شهادة داخل لبنان</div>
 
 
     <div class="main-area">
@@ -25,13 +25,13 @@
 
 
                     <div [class.d-none]="submitted" id="form" class="form-area col-12 px-5  py-3">
-                        {{cForm.value | json}}
+                    {{certForm.value | json}}
 
 
 
 
 
-                        <form #cForm="ngForm" (ngSubmit)="onSubmit(cForm.value)">
+                        <form #certForm="ngForm" (ngSubmit)="onSubmit(certForm.value)">
 
 
                             <p> <span style="color: #ff0000; font-size: large;">* &nbsp;</span>Required</p>
@@ -52,10 +52,10 @@
                                         </div>
                                     </div> -->
 
-                                    <div id="personal photo" class="col-6 pe-3">
+                                    <div id="grades" class="col-6 pe-3">
                                         <div class="form-group">
 
-                                            <input type="text" name="personalPhoto" #personalPhoto="ngModel"
+                                            <input type="text" name="grades" #grades="ngModel"
                                                 class="form-control" [(ngModel)]="selectedFile1" required>
 
                                         </div>
@@ -97,19 +97,19 @@
                                         </div>
                                     </div>
 
-                                    <div id="training" class="col-6 pe-3">
+                                    <div id="bayan" class="col-6 pe-3">
                                         <div class="form-group">
 
-                                            <input type="text" name="training" #training="ngModel" class="form-control"
+                                            <input type="text" name="bayan" #bayan="ngModel" class="form-control"
                                                 [(ngModel)]="selectedFile6" required>
 
                                         </div>
                                     </div>
 
-                                    <div id="mo3adale" class="col-6 pe-3">
+                                    <div id="ikama" class="col-6 pe-3">
                                         <div class="form-group">
 
-                                            <input type="text" name="mo3adale" #mo3adale="ngModel" class="form-control"
+                                            <input type="text" name="ikama" #ikama="ngModel" class="form-control"
                                                 [(ngModel)]="selectedFile7" required>
 
                                         </div>
@@ -295,14 +295,14 @@
 
                             <div class="row">
 
-                                <div id="question 7 upload jpg personal photo" class="col-6 pe-3 pb-3">
+                                <div id="question 7 upload grades" class="col-6 pe-3 pb-3">
 
 
                                     <div class="mb-3 form-group">
                                         <label>{{q7}}<span style="color: #ff0000; font-size: large;">*
                                                 &nbsp;</span></label>
                                         <input type="file" #fileInput1 class="form-control"
-                                            (change)="onFileSelected1($event)" name="personalPhoto" accept="image/jpeg"
+                                            (change)="onFileSelected1($event)" name="grades" accept="image/jpeg"
                                             required>
 
 
@@ -398,14 +398,14 @@
                                 </div>
 
 
-                                <div id="question 12 upload training" class="col-6 ps-3 pb-3">
+                                <div id="question 12 upload bayan" class="col-6 ps-3 pb-3">
 
 
                                     <div class="mb-3 form-group">
                                         <label>{{q12}}<span style="color: #ff0000; font-size: large;">*
                                                 &nbsp;</span></label>
                                         <input type="file" #fileInput6 class="form-control"
-                                            (change)="onFileSelected6($event)" name="training"
+                                            (change)="onFileSelected6($event)" name="bayan"
                                             accept="image/jpeg, application/pdf" required>
 
 
@@ -419,14 +419,14 @@
                                 </div>
 
 
-                                <div id="question 13 upload mo3adale" class="col-6 pe-3 pb-3">
+                                <div id="question 13 upload ikama" class="col-6 pe-3 pb-3">
 
 
                                     <div class="mb-3 form-group">
                                         <label>{{q13}}<span style="color: #ff0000; font-size: large;">*
                                                 &nbsp;</span></label>
                                         <input type="file" #fileInput7 class="form-control"
-                                            (change)="onFileSelected7($event)" name="mo3adale"
+                                            (change)="onFileSelected7($event)" name="ikama"
                                             accept="image/jpeg, application/pdf" required>
 
 
@@ -455,9 +455,9 @@
                             <div class="row">
 
                                 <div class=" col-3 py-3">
-                                    <button *ngIf="cForm.form.invalid" [disabled]="cForm.form.invalid"
+                                    <button *ngIf="certForm.form.invalid" [disabled]="certForm.form.invalid"
                                         class="btn btn-danger" type="submit">Missing Fields</button>
-                                    <button [class.d-none]="cForm.form.invalid" [disabled]="cForm.form.invalid"
+                                    <button [class.d-none]="certForm.form.invalid" [disabled]="certForm.form.invalid"
                                         class="btn btn-success" type="submit">Submit</button>
 
                                 </div>

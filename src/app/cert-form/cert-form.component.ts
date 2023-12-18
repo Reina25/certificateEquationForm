@@ -14,7 +14,6 @@ export class CertFormComponent implements OnInit {
   constructor(private certService: CertServiceService, private http: HttpClient){}
 
 
-  studentFirstName:any;
 
   submitted:boolean=false;
 
@@ -28,13 +27,13 @@ export class CertFormComponent implements OnInit {
   q5: string = "مكان الولادة";
   q6: string = "تاريخ الولادة";
 
-  q7: string = "صورة شمسية";
-  q8: string = "هوية";
-  q9: string = "إخراج قيد";
-  q10: string = "شهادة مصدقة ";
-  q11: string = "ثانوية عامة أو ما يعادلها مصدقة";
-  q12: string = "ملف تدريب مصدق من وزارة الصحة (طب وتغذية)";
-  q13: string = "معادلة (طب)"
+  q7: string = "علامات";
+  q8: string = "هوية"; //
+  q9: string = "إخراج قيد";//
+  q10: string = "شهادة مصدقة ";//
+  q11: string = "ثانوية عامة أو ما يعادلها مصدقة";//
+  q12: string = "بيان دخول وخروج لغير اللبنانيين"
+  q13: string = "صورة عن الإقامة أيام الدراسة"
 
 
   
