@@ -25,7 +25,7 @@
 
 
                     <div [class.d-none]="submitted" id="form" class="form-area col-12 px-5  py-3">
-                    {{certForm.value | json}}
+                    <!-- {{certForm.value | json}} -->
 
 
 
@@ -302,7 +302,7 @@
                                         <label>{{q7}}<span style="color: #ff0000; font-size: large;">*
                                                 &nbsp;</span></label>
                                         <input type="file" #fileInput1 class="form-control"
-                                            (change)="onFileSelected1($event)" name="grades" accept="image/jpeg"
+                                            (change)="onFileSelected1($event)" name="grades" accept="image/jpeg , application/pdf"
                                             required>
 
 

@@ -88,7 +88,7 @@ export class CertFormComponent implements OnInit {
 
   onFileSelected1(event: any) {
     const file: File = event.target.files[0];
-    if (file && file.type === 'image/jpeg') {
+    if (file && (file.type === 'image/jpeg'|| file.type === 'application/pdf')) {
       const reader = new FileReader();
       reader.onload = () => {
         const uploadedFile: UploadedFile = {
