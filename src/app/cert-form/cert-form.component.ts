@@ -19,30 +19,31 @@ export class CertFormComponent implements OnInit {
 
   response: formResponse;
 
-  
-  q1: string = "اسم الطالب الكامل";
-  q2: string = "الجنس";
-  q3: string = "رقم الهاتف";
-  q4: string = "البريد الالكتروني الخاص بالجامعة ";
-  q5: string = "مكان الولادة";
-  q6: string = "تاريخ الولادة";
+  q1 = "إسم الطالب";
+  q2 = "إسم الأب";
+  q3 = "الشهرة";
+  q4 = "الجنسية"
+  q5 = "تاريخ الولادة";
+  q6 = "مكان الولادة";
+  q7 = "بلد الولادة"
+  q8 = "الجنس";
+  q9 = "رقم الهاتف";
+  q10 = "البريد الالكتروني الخاص بالجامعة ";
+  q11 = "رقم جواز سفر"; // only for foreingers
 
-  q7: string = "علامات";
-  q8: string = "هوية"; //
-  q9: string = "إخراج قيد";//
-  q10: string = "شهادة مصدقة ";//
-  q11: string = "ثانوية عامة أو ما يعادلها مصدقة";//
-  q12: string = "بيان دخول وخروج لغير اللبنانيين"
-  q13: string = "صورة عن الإقامة أيام الدراسة"
+  q12 = "علامات مصدقة";
+  q13 = "هوية أو إخراج قيد(جديد) أو جواز سفر صالح";
+  q14 = "شهادة مصدقة (اذا كنت محولا من جامعة أخرى يجب ارفاق الدرجات أيضا) "
+  q15 = "ثانوية عامة أو ما يعادلها مصدقة (اذا من خارج لبنان, يجب ان تكون مصدقة و معادلة و لم يمر على تاريخ اصدارها اكثر من سنة)  ";
+  q16 = "بيان من الامن العام دخول وخروج لغير اللبنانيين و الفلسطينيين";
+  q17 = "صورة عن الإقامة أيام الدراسة لغير اللبنانيين و الفلسطينيين"
 
 
-  
-
-// name
+// place of birth
   selectedOption1: any 
   savedOption1: any;
 
-  // gender
+// country of birth
   selectedOption2: any 
   savedOption2: any;
 
@@ -54,17 +55,11 @@ export class CertFormComponent implements OnInit {
   selectedOption3: any 
   savedOption3: any;
 
-  // email
+  // passport number
   selectedOption4: any 
   savedOption4: any;
 
-  // pob
-  selectedOption5: any 
-  savedOption5: any;
 
-  // dob
-  selectedOption6: any 
-  savedOption6: any;
 
 
   
@@ -81,14 +76,14 @@ export class CertFormComponent implements OnInit {
 
 
 
-  //////////////// personal photo
+  //////////////// grades
   selectedFile1: UploadedFile | undefined;
 
   @ViewChild('fileInput1') fileInput1!: ElementRef;
 
   onFileSelected1(event: any) {
     const file: File = event.target.files[0];
-    if (file && (file.type === 'image/jpeg'|| file.type === 'application/pdf')) {
+    if (file && ( file.type === 'application/pdf')) {
       const reader = new FileReader();
       reader.onload = () => {
         const uploadedFile: UploadedFile = {
@@ -124,7 +119,7 @@ export class CertFormComponent implements OnInit {
 
   onFileSelected2(event: any) {
     const file: File = event.target.files[0];
-    if (file && (file.type === 'image/jpeg'|| file.type === 'application/pdf')) {
+    if (file && (file.type === 'application/pdf')) {
       const reader = new FileReader();
       reader.onload = () => {
         const uploadedFile: UploadedFile = {
@@ -151,14 +146,14 @@ export class CertFormComponent implements OnInit {
 
 
 
-   ////////////// 25raj 2eed
+   ////////////// certificate
    selectedFile3: UploadedFile | undefined;
 
    @ViewChild('fileInput3') fileInput3!: ElementRef;
 
  onFileSelected3(event: any) {
    const file: File = event.target.files[0];
-   if (file && (file.type === 'image/jpeg'|| file.type === 'application/pdf')) {
+   if (file && ( file.type === 'application/pdf')) {
      const reader = new FileReader();
      reader.onload = () => {
        const uploadedFile: UploadedFile = {
@@ -185,14 +180,14 @@ export class CertFormComponent implements OnInit {
 
 
 
-  ////////////// certificate
+  ////////////// grade12
   selectedFile4: UploadedFile | undefined;
 
   @ViewChild('fileInput4') fileInput4!: ElementRef;
 
 onFileSelected4(event: any) {
   const file: File = event.target.files[0];
-  if (file && (file.type === 'image/jpeg'|| file.type === 'application/pdf')) {
+  if (file && (file.type === 'application/pdf')) {
     const reader = new FileReader();
     reader.onload = () => {
       const uploadedFile: UploadedFile = {
@@ -218,14 +213,14 @@ deleteFile4() {
 }
 
 
- ////////////// grade12
+ ////////////// bayan
  selectedFile5: UploadedFile | undefined;
 
  @ViewChild('fileInput5') fileInput5!: ElementRef;
 
 onFileSelected5(event: any) {
  const file: File = event.target.files[0];
- if (file && (file.type === 'image/jpeg'|| file.type === 'application/pdf')) {
+ if (file && (file.type === 'application/pdf')) {
    const reader = new FileReader();
    reader.onload = () => {
      const uploadedFile: UploadedFile = {
@@ -252,14 +247,14 @@ deleteFile5() {
 
 
 
- ////////////// training
+ ////////////// ikama
  selectedFile6: UploadedFile | undefined;
 
  @ViewChild('fileInput6') fileInput6!: ElementRef;
 
 onFileSelected6(event: any) {
  const file: File = event.target.files[0];
- if (file && (file.type === 'image/jpeg'|| file.type === 'application/pdf')) {
+ if (file && (file.type === 'application/pdf')) {
    const reader = new FileReader();
    reader.onload = () => {
      const uploadedFile: UploadedFile = {
@@ -287,36 +282,36 @@ deleteFile6() {
 
 
  ////////////// mo3adale
- selectedFile7: UploadedFile | undefined;
+//  selectedFile7: UploadedFile | undefined;
 
- @ViewChild('fileInput7') fileInput7!: ElementRef;
+//  @ViewChild('fileInput7') fileInput7!: ElementRef;
 
-onFileSelected7(event: any) {
- const file: File = event.target.files[0];
- if (file && (file.type === 'image/jpeg'|| file.type === 'application/pdf')) {
-   const reader = new FileReader();
-   reader.onload = () => {
-     const uploadedFile: UploadedFile = {
-       name: file.name,
-       content: reader.result as string 
-     };
-     this.selectedFile7 = uploadedFile;
-     localStorage.setItem('selectedFile7', JSON.stringify(this.selectedFile7));
+// onFileSelected7(event: any) {
+//  const file: File = event.target.files[0];
+//  if (file && (file.type === 'image/jpeg'|| file.type === 'application/pdf')) {
+//    const reader = new FileReader();
+//    reader.onload = () => {
+//      const uploadedFile: UploadedFile = {
+//        name: file.name,
+//        content: reader.result as string 
+//      };
+//      this.selectedFile7 = uploadedFile;
+//      localStorage.setItem('selectedFile7', JSON.stringify(this.selectedFile7));
 
-   };
-   reader.readAsDataURL(file);
- }
-}
+//    };
+//    reader.readAsDataURL(file);
+//  }
+// }
 
-deleteFile7() {
- localStorage.setItem('selectedFile7', null);
- const storedFile7 = localStorage.getItem('selectedFile7');
- if (storedFile7) {
-   this.selectedFile7 = JSON.parse(storedFile7);
- }
- this.fileInput7.nativeElement.value = '';
+// deleteFile7() {
+//  localStorage.setItem('selectedFile7', null);
+//  const storedFile7 = localStorage.getItem('selectedFile7');
+//  if (storedFile7) {
+//    this.selectedFile7 = JSON.parse(storedFile7);
+//  }
+//  this.fileInput7.nativeElement.value = '';
 
-}
+// }
 
 
 
@@ -373,22 +368,22 @@ ngOnInit() {
    
   }
 
-  this.savedOption5 = sessionStorage.getItem('selectedOption5');
+  // this.savedOption5 = sessionStorage.getItem('selectedOption5');
 
-  if (this.savedOption5) {
-    this.selectedOption5 = this.savedOption5;
-    this.saveSelection5(this.selectedOption5);
+  // if (this.savedOption5) {
+  //   this.selectedOption5 = this.savedOption5;
+  //   this.saveSelection5(this.selectedOption5);
    
-  }
+  // }
 
 
-  this.savedOption6 = sessionStorage.getItem('selectedOption6');
+  // this.savedOption6 = sessionStorage.getItem('selectedOption6');
 
-  if (this.savedOption6) {
-    this.selectedOption6 = this.savedOption6;
-    this.saveSelection6(this.selectedOption6);
+  // if (this.savedOption6) {
+  //   this.selectedOption6 = this.savedOption6;
+  //   this.saveSelection6(this.selectedOption6);
    
-  }
+  // }
 
   // const storedFiles = localStorage.getItem('uploadedFiles');
   // if (storedFiles) {
@@ -425,10 +420,10 @@ ngOnInit() {
     this.selectedFile6 = JSON.parse(storedFile6);
   }
 
-  const storedFile7 = localStorage.getItem('selectedFile7');
-  if (storedFile7) {
-    this.selectedFile7 = JSON.parse(storedFile7);
-  }
+  // const storedFile7 = localStorage.getItem('selectedFile7');
+  // if (storedFile7) {
+  //   this.selectedFile7 = JSON.parse(storedFile7);
+  // }
 
 
 
@@ -468,15 +463,15 @@ saveSelection4(newValue: string) {
   this.selectedOption4 = newValue;
   sessionStorage.setItem('selectedOption4', this.selectedOption4);
 }
-saveSelection5(newValue: string) {
-  this.selectedOption5 = newValue;
-  sessionStorage.setItem('selectedOption5', this.selectedOption5);
-}
+// saveSelection5(newValue: string) {
+//   this.selectedOption5 = newValue;
+//   sessionStorage.setItem('selectedOption5', this.selectedOption5);
+// }
 
-saveSelection6(newValue: string) {
-  this.selectedOption6 = newValue;
-  sessionStorage.setItem('selectedOption6', this.selectedOption6);
-}
+// saveSelection6(newValue: string) {
+//   this.selectedOption6 = newValue;
+//   sessionStorage.setItem('selectedOption6', this.selectedOption6);
+// }
 
 
 
