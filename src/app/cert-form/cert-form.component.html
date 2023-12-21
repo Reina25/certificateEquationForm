@@ -111,15 +111,7 @@
                                         </div>
                                     </div>
 
-                                    <!-- <div id="ikama" class="col-6 pe-3">
-                                        <div class="form-group">
-
-                                            <input type="text" name="ikama" #ikama="ngModel" class="form-control"
-                                                [(ngModel)]="selectedFile7" required>
-
-                                        </div>
-                                    </div> -->
-
+                                
 
                                 </div>
 
@@ -152,7 +144,7 @@
                                     <div class="form-group">
                                         <label>{{q1}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
                                         <input type="text" name="FirstName" 
-                                        [(ngModel)]="student.arabicFullName"
+                                        [(ngModel)]="student.fullName"
                                          #FirstName="ngModel"
                                          class="form-control" readonly ngModel>
                                     </div>
@@ -195,15 +187,17 @@
                                             of birth is required</small>
                                     </div>
                                 </div>
-                                <div id="question 4 nationality" class="col-4">
+
+                                <div id="question 8 gender" class="col-4">
                                     <div class="form-group">
-                                        <label>{{q4}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
-                                        <input type="text" name="Nationality" 
+                                        <label>{{q8}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
+                                        <input type="text" name="Gender" 
                                         
-                                         #Nationality="ngModel"
+                                         #Gender="ngModel"
                                          class="form-control" readonly ngModel>
                                     </div>
                                 </div>
+                       
                             
                                
 
@@ -249,14 +243,9 @@
 
                              
                                 <div id="question 8 gender" class="col-4">
-                                    <div class="form-group">
-                                        <label>{{q8}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
-                                        <input type="text" name="Gender" 
-                                        
-                                         #Gender="ngModel"
-                                         class="form-control" readonly ngModel>
-                                    </div>
+                                    
                                 </div>
+                           
 
                                 <div id="question 11 student passport number" class="col-4">
                                     <div class="form-group">
@@ -278,6 +267,17 @@
 
                                     </div>
                                 </div>
+
+                                <div id="question 4 nationality" class="col-4">
+                                    <div class="form-group">
+                                        <label>{{q4}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
+                                        <input type="text" name="Nationality" 
+                                        
+                                         #Nationality="ngModel"
+                                         class="form-control" readonly ngModel>
+                                    </div>
+                                </div>
+
 
 
 

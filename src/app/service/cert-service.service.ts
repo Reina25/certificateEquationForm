@@ -13,7 +13,7 @@ export class CertServiceService {
 
   isFilled: boolean;
 
-  arabicFullName: any;
+  fullName: any;
 
   private studentData: any = {}; 
 
@@ -46,15 +46,15 @@ export class CertServiceService {
 
 
   setStudentName(studentName: string) {
-    this.arabicFullName = studentName;
+    this.fullName = studentName;
     return studentName;
   }
 
   getStudentName() {
-    return this.arabicFullName;
+    return this.fullName;
   }
 
-  saveStudentName() {
+    saveStudentName() {
     return localStorage.setItem('studentName', this.getStudentName());
   }
 
@@ -92,15 +92,15 @@ export class CertServiceService {
         const student = response[0]; 
 
      
-        this.studentData.arabicFullName = student.arabicFullName;
+        this.studentData.fullName = student.arabicFullName;
         this.studentData.faculty = student.faculty;
         this.studentData.campus = student.campus;
         this.studentData.program = student.program;
 
    
 
-        this.arabicFullName = this.setStudentName(this.studentData.arabicFullName);
-        this.arabicFullName = this.saveStudentName();
+        this.fullName = this.setStudentName(this.studentData.fullName);
+        this.fullName = this.saveStudentName();
 
         // this.faculty = this.setFaculty(this.studentData.faculty);
         // this.faculty = this.saveFaculty();

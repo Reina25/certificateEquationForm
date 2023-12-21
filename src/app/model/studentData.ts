@@ -2,7 +2,8 @@
 export interface  studentData {
 
 
-    arabicFullName: string;
+
+    fullName: string;
 
 
 }

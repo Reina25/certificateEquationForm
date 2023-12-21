@@ -329,7 +329,7 @@ ngOnInit() {
 
   
   this.student = {
-    arabicFullName: this.certService.getSavedStudentName(),
+    fullName: this.certService.getSavedStudentName(),
 
   };
 
