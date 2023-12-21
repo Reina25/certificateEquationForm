@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { studentData } from '../model/studentData';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,12 @@ export class CertServiceService {
   studentID: string;
 
   hash: any;
+
+  isFilled: boolean;
+
+  arabicFullName: any;
+
+  private studentData: any = {}; 
 
 
 
@@ -37,6 +44,24 @@ export class CertServiceService {
     return this.hash;
   }
 
+
+  setStudentName(studentName: string) {
+    this.arabicFullName = studentName;
+    return studentName;
+  }
+
+  getStudentName() {
+    return this.arabicFullName;
+  }
+
+  saveStudentName() {
+    return localStorage.setItem('studentName', this.getStudentName());
+  }
+
+  getSavedStudentName() {
+    return localStorage.getItem('studentName')
+  }
+
   // save and get saved student ID and hash
 
   saveStudentID() {
@@ -53,6 +78,39 @@ export class CertServiceService {
 
   getSavedHash() {
     return localStorage.getItem('hash')
+  }
+
+
+
+
+  fetchStudentData() {
+    this.http.get<any>(
+      'http://172.30.2.8:121/api/Student/'+ this.getStudentID()
+    )
+      .subscribe((response) => {
+       
+        const student = response[0]; 
+
+     
+        this.studentData.arabicFullName = student.arabicFullName;
+        this.studentData.faculty = student.faculty;
+        this.studentData.campus = student.campus;
+        this.studentData.program = student.program;
+
+   
+
+        this.arabicFullName = this.setStudentName(this.studentData.arabicFullName);
+        this.arabicFullName = this.saveStudentName();
+
+        // this.faculty = this.setFaculty(this.studentData.faculty);
+        // this.faculty = this.saveFaculty();
+
+        // this.campus = this.setCampus(this.studentData.campus);
+        // this.campus = this.saveCampus();
+
+
+
+      });
   }
 
 

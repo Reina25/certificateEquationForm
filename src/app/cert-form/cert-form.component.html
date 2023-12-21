@@ -126,17 +126,17 @@
 
 <!-- [(ngModel)]="student.studentID" -->
 
-                                <div id="question 1 student first Name" class="col-6 pe-3">
+                                <div id="question 3 student last Name" class="col-4 ">
                                     <div class="form-group">
-                                        <label>{{q1}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
-                                        <input type="text" name="FirstName" 
+                                        <label>{{q3}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
+                                        <input type="text" name="LastName" 
                                         
-                                         #FirstName="ngModel"
-                                         class="form-control" readonly ngModel>
+                                        #LastName="ngModel"
+                                        class="form-control" readonly ngModel>
                                     </div>
                                 </div>
 
-                                <div id="question 2 student middle Name" class="col-6 ps-3">
+                                <div id="question 2 student middle Name" class="col-4 ">
                                     <div class="form-group">
                                         <label>{{q2}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
                                         <input type="text" name="MiddleName" 
@@ -146,27 +146,21 @@
                                     </div>
                                 </div>
 
-                                <div id="question 3 student last Name" class="col-6 pe-3">
+                              
+
+                                <div id="question 1 student first Name" class="col-4 ">
                                     <div class="form-group">
-                                        <label>{{q3}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
-                                        <input type="text" name="LastName" 
-                                        
-                                         #LastName="ngModel"
+                                        <label>{{q1}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
+                                        <input type="text" name="FirstName" 
+                                        [(ngModel)]="student.arabicFullName"
+                                         #FirstName="ngModel"
                                          class="form-control" readonly ngModel>
                                     </div>
                                 </div>
 
-                                <div id="question 4 nationality" class="col-6 ps-3">
-                                    <div class="form-group">
-                                        <label>{{q4}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
-                                        <input type="text" name="Nationality" 
-                                        
-                                         #Nationality="ngModel"
-                                         class="form-control" readonly ngModel>
-                                    </div>
-                                </div>
+                             
 
-                                <div id="question 5 Date of birth" class="col-6 pe-3">
+                                <div id="question 5 Date of birth" class="col-4">
                                     <div class="form-group">
                                         <label>{{q5}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
                                         <input type="text" name="DateofBirth" 
@@ -175,22 +169,7 @@
                                          class="form-control" readonly ngModel>
                                     </div>
                                 </div>
-
-                                <div id="question 6 student place of birth" class="col-6 ps-3">
-                                    <div class="form-group">
-                                        <label>{{q6}}<span style="color: #ff0000; font-size: large;">*
-                                                &nbsp;</span></label>
-                                        <input type="text" name="PlaceofBirth" #studentPlaceBirth="ngModel"
-                                            [class.is-invalid]="studentPlaceBirth.invalid && studentPlaceBirth.touched"
-                                            class="form-control" [(ngModel)]="selectedOption1"
-                                            (ngModelChange)="saveSelection1($event)" required>
-                                        <small class="text-danger"
-                                            [class.d-none]="studentPlaceBirth.untouched || studentPlaceBirth.valid">Place
-                                            of birth is required</small>
-                                    </div>
-                                </div>
-
-                                <div id="question 7 student country of birth" class="col-6 pe-3">
+                                <div id="question 7 student country of birth" class="col-4">
                                     <div class="form-group">
                                         <label>{{q7}}<span style="color: #ff0000; font-size: large;">*
                                                 &nbsp;</span></label>
@@ -203,19 +182,48 @@
                                             of birth is required</small>
                                     </div>
                                 </div>
-
-                                <div id="question 8 gender" class="col-6 pe-3">
+                                <div id="question 6 student place of birth" class="col-4">
                                     <div class="form-group">
-                                        <label>{{q8}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
-                                        <input type="text" name="Gender" 
+                                        <label>{{q6}}<span style="color: #ff0000; font-size: large;">*
+                                                &nbsp;</span></label>
+                                        <input type="text" name="PlaceofBirth" #studentPlaceBirth="ngModel"
+                                            [class.is-invalid]="studentPlaceBirth.invalid && studentPlaceBirth.touched"
+                                            class="form-control" [(ngModel)]="selectedOption1"
+                                            (ngModelChange)="saveSelection1($event)" required>
+                                        <small class="text-danger"
+                                            [class.d-none]="studentPlaceBirth.untouched || studentPlaceBirth.valid">Place
+                                            of birth is required</small>
+                                    </div>
+                                </div>
+                                <div id="question 4 nationality" class="col-4">
+                                    <div class="form-group">
+                                        <label>{{q4}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
+                                        <input type="text" name="Nationality" 
                                         
-                                         #Gender="ngModel"
+                                         #Nationality="ngModel"
+                                         class="form-control" readonly ngModel>
+                                    </div>
+                                </div>
+                            
+                               
+
+                              
+
+                               
+
+
+                                <div id="question 10 email" class="col-4">
+                                    <div class="form-group">
+                                        <label>{{q10}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
+                                        <input type="text" name="Email" 
+                                        
+                                         #Email="ngModel"
                                          class="form-control" readonly ngModel>
                                     </div>
                                 </div>
 
-                                <div id="question 9 student phone number" class="col-6 pe-3">
-                                    <div class="form-group">
+                                <div id="question 9 student phone number" class="col-4">
+                                    <!-- <div class="form-group">
                                         <label>{{q9}}<span style="color: #ff0000; font-size: large;">*
                                                 &nbsp;</span></label>
                                         <input type="tel" name="PhoneNumber" #studentPhone="ngModel"
@@ -229,23 +237,28 @@
                                                 number is required</small>
                                             <small class="text-danger" *ngIf="studentPhone.errors['pattern']">Phone
                                                 number must be 8 digits</small>
-                                        </div>
-
-
-                                    </div>
+                                        </div> -->
+                                        <div class="form-group">
+                                            <label>{{q9}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
+                                            <input type="text" name="PhoneNumber" 
+                                            
+                                             #PhoneNumber="ngModel"
+                                             class="form-control" readonly ngModel>
+                                        </div>                                   
                                 </div>
 
-                                <div id="question 10 email" class="col-6 pe-3">
+                             
+                                <div id="question 8 gender" class="col-4">
                                     <div class="form-group">
-                                        <label>{{q10}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
-                                        <input type="text" name="Email" 
+                                        <label>{{q8}}<span style="color: #ff0000; font-size: large;">* &nbsp;</span></label>
+                                        <input type="text" name="Gender" 
                                         
-                                         #Email="ngModel"
+                                         #Gender="ngModel"
                                          class="form-control" readonly ngModel>
                                     </div>
                                 </div>
 
-                                <div id="question 11 student passport number" class="col-6 pe-3">
+                                <div id="question 11 student passport number" class="col-4">
                                     <div class="form-group">
                                         <label>{{q11}}<span style="color: #ff0000; font-size: large;">*
                                                 &nbsp;</span></label>
@@ -253,7 +266,7 @@
                                             [class.is-invalid]="PassportNumber.invalid && PassportNumber.touched"
                                             class="form-control" [(ngModel)]="selectedOption4"
                                             (ngModelChange)="saveSelection4($event)"
-                                             pattern="^[0-9a-zA-Z]*[0-9][0-9a-zA-Z]*$" >
+                                             pattern="^[0-9a-zA-Z]{8,9}$|^\\d{8,9}$$" required >
                                         <div
                                             *ngIf="PassportNumber.touched && (PassportNumber.invalid || PassportNumber.errors)">
                                             <small class="text-danger" *ngIf="PassportNumber.errors['required']">Passport
@@ -383,7 +396,7 @@
 
                                
 
-                                <div id="question 14 upload certificate" class="col-6 ps-3 pb-3">
+                                <div id="question 14 upload certificate" class="col-6 pe-3 pb-3">
 
 
                                     <div class="mb-3 form-group">
@@ -404,7 +417,7 @@
                                 </div>
 
 
-                                <div id="question 15 upload grade12" class="col-6 pe-3 pb-3">
+                                <div id="question 15 upload grade12" class="col-6 ps-3 pb-3">
 
 
                                     <div class="mb-3 form-group">
@@ -425,7 +438,7 @@
                                 </div>
 
 
-                                <div id="question 16 upload bayan" class="col-6 ps-3 pb-3">
+                                <div id="question 16 upload bayan" class="col-6 pe-3 pb-3">
 
 
                                     <div class="mb-3 form-group">
@@ -446,13 +459,13 @@
                                 </div>
 
 
-                                <div id="question 17 upload ikama" class="col-6 pe-3 pb-3">
+                                <div id="question 17 upload ikama" class="col-6 ps-3 pb-3">
 
 
                                     <div class="mb-3 form-group">
                                         <label>{{q17}}<span style="color: #ff0000; font-size: large;">*
                                                 &nbsp;</span></label>
-                                        <input type="file" #fileInput7 class="form-control"
+                                        <input type="file" #fileInput6 class="form-control"
                                             (change)="onFileSelected6($event)" name="ikama"
                                             accept=" application/pdf" required>
 

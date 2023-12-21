@@ -3,6 +3,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { formResponse } from '../model/formResponse';
 import { UploadedFile } from '../model/uploadedFile';
 import { CertServiceService } from '../service/cert-service.service';
+import { studentData } from '../model/studentData';
 
 @Component({
   selector: 'app-cert-form',
@@ -18,6 +19,8 @@ export class CertFormComponent implements OnInit {
   submitted:boolean=false;
 
   response: formResponse;
+
+  student: studentData;
 
   q1 = "إسم الطالب";
   q2 = "إسم الأب";
@@ -323,6 +326,12 @@ deleteFile6() {
 
 
 ngOnInit() {
+
+  
+  this.student = {
+    arabicFullName: this.certService.getSavedStudentName(),
+
+  };
 
 
  
