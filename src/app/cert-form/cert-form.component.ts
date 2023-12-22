@@ -32,6 +32,7 @@ export class CertFormComponent implements OnInit {
   q8 = "الجنس";
   q9 = "رقم الهاتف";
   q10 = "البريد الالكتروني الخاص بالجامعة ";
+  q18 =  " البريد الالكتروني الشخصي";
   q11 = "رقم جواز سفر"; // only for foreingers
 
   q12 = "علامات مصدقة";
@@ -62,6 +63,9 @@ export class CertFormComponent implements OnInit {
   selectedOption4: any 
   savedOption4: any;
 
+    // personal email 
+    selectedOption5: any 
+    savedOption5: any;
 
 
 
@@ -377,13 +381,13 @@ ngOnInit() {
    
   }
 
-  // this.savedOption5 = sessionStorage.getItem('selectedOption5');
+  this.savedOption5 = sessionStorage.getItem('selectedOption5');
 
-  // if (this.savedOption5) {
-  //   this.selectedOption5 = this.savedOption5;
-  //   this.saveSelection5(this.selectedOption5);
+  if (this.savedOption5) {
+    this.selectedOption5 = this.savedOption5;
+    this.saveSelection5(this.selectedOption5);
    
-  // }
+  }
 
 
   // this.savedOption6 = sessionStorage.getItem('selectedOption6');
@@ -472,10 +476,10 @@ saveSelection4(newValue: string) {
   this.selectedOption4 = newValue;
   sessionStorage.setItem('selectedOption4', this.selectedOption4);
 }
-// saveSelection5(newValue: string) {
-//   this.selectedOption5 = newValue;
-//   sessionStorage.setItem('selectedOption5', this.selectedOption5);
-// }
+saveSelection5(newValue: string) {
+  this.selectedOption5 = newValue;
+  sessionStorage.setItem('selectedOption5', this.selectedOption5);
+}
 
 // saveSelection6(newValue: string) {
 //   this.selectedOption6 = newValue;
