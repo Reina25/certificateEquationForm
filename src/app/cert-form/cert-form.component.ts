@@ -334,6 +334,8 @@ ngOnInit() {
   
   this.student = {
     fullName: this.certService.getSavedStudentName(),
+    StudentID: this.certService.getSavedStudentID(),
+    program: this.certService.getSavedStudentProgram()
 
   };
 

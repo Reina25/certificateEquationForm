@@ -15,6 +15,8 @@ export class CertServiceService {
 
   fullName: any;
 
+  program: any;
+
   private studentData: any = {}; 
 
 
@@ -62,6 +64,23 @@ export class CertServiceService {
     return localStorage.getItem('studentName')
   }
 
+  setStudentProgram(program: string) {
+    this.program = program;
+    return program;
+  }
+
+  getStudentProgram() {
+    return this.program;
+  }
+
+    saveStudentProgram() {
+    return localStorage.setItem('program', this.getStudentProgram());
+  }
+
+  getSavedStudentProgram() {
+    return localStorage.getItem('program')
+  }
+
   // save and get saved student ID and hash
 
   saveStudentID() {
@@ -91,7 +110,7 @@ export class CertServiceService {
        
         const student = response[0]; 
 
-     
+        
         this.studentData.fullName = student.arabicFullName;
         this.studentData.faculty = student.faculty;
         this.studentData.campus = student.campus;
@@ -101,6 +120,9 @@ export class CertServiceService {
 
         this.fullName = this.setStudentName(this.studentData.fullName);
         this.fullName = this.saveStudentName();
+
+        this.program = this.setStudentProgram(this.studentData.program);
+        this.program = this.saveStudentProgram();
 
         // this.faculty = this.setFaculty(this.studentData.faculty);
         // this.faculty = this.saveFaculty();
