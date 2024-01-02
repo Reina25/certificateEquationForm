@@ -41,9 +41,6 @@ export class CheckInfoComponent implements OnInit {
           console.log('EMPTY');
           this.certService.fetchStudentData();
 
-          setTimeout(() => {
-            this.router.navigate(['/CertificationEquation']);
-          }, 1000); 
 
         }else if (response.length !==0){
           this.isFilled = true;

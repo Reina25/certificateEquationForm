@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { studentData } from '../model/studentData';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class CertServiceService {
 
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   // set and get student ID and hash
 
@@ -118,17 +119,9 @@ export class CertServiceService {
 
    
 
-        this.fullName = this.setStudentName(this.studentData.fullName);
-        this.fullName = this.saveStudentName();
+        this.studentData.fullName = this.setStudentName(this.studentData.fullName);
+        this.studentData.fullName = this.saveStudentName();
 
-        this.program = this.setStudentProgram(this.studentData.program);
-        this.program = this.saveStudentProgram();
-
-        // this.faculty = this.setFaculty(this.studentData.faculty);
-        // this.faculty = this.saveFaculty();
-
-        // this.campus = this.setCampus(this.studentData.campus);
-        // this.campus = this.saveCampus();
 
 
 
