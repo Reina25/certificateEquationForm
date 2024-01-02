@@ -25,7 +25,7 @@
 
 
                     <div [class.d-none]="submitted" id="form" class="form-area col-12 px-5  py-3">
-                    {{certForm.value | json}}
+                    <!-- {{certForm.value | json}} -->
 
 
 
@@ -168,10 +168,16 @@
                                         <input type="text" name="CountryofBirth" #CountryofBirth="ngModel"
                                             [class.is-invalid]="CountryofBirth.invalid && CountryofBirth.touched"
                                             class="form-control" [(ngModel)]="selectedOption2"
+                                           pattern="^[\u0621-\u064A\040]+$"
                                             (ngModelChange)="saveSelection2($event)" required>
-                                        <small class="text-danger"
-                                            [class.d-none]="CountryofBirth.untouched || CountryofBirth.valid">Place
-                                            of birth is required</small>
+                                         <div
+                                            *ngIf="CountryofBirth.touched && (CountryofBirth.invalid || CountryofBirth.errors)">
+                                            <small class="text-danger" *ngIf="CountryofBirth.errors['required']">Country
+                                                of birth is required</small>
+                                            <small class="text-danger" *ngIf="CountryofBirth.errors['pattern']">Country
+                                                of birth must be in arabic</small>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div id="question 6 student place of birth" class="col-4">
@@ -181,10 +187,16 @@
                                         <input type="text" name="PlaceofBirth" #studentPlaceBirth="ngModel"
                                             [class.is-invalid]="studentPlaceBirth.invalid && studentPlaceBirth.touched"
                                             class="form-control" [(ngModel)]="selectedOption1"
+                                            pattern="^[\u0621-\u064A\040]+$"
                                             (ngModelChange)="saveSelection1($event)" required>
-                                        <small class="text-danger"
-                                            [class.d-none]="studentPlaceBirth.untouched || studentPlaceBirth.valid">Place
-                                            of birth is required</small>
+                                        <div
+                                            *ngIf="studentPlaceBirth.touched && (studentPlaceBirth.invalid || studentPlaceBirth.errors)">
+                                            <small class="text-danger" *ngIf="studentPlaceBirth.errors['required']">Place
+                                                of birth is required</small>
+                                            <small class="text-danger" *ngIf="studentPlaceBirth.errors['pattern']">Place
+                                                of birth must be in arabic</small>
+                                        </div>
+                                      
                                     </div>
                                 </div>
 
@@ -267,8 +279,7 @@
                                             *ngIf="PassportNumber.touched && (PassportNumber.invalid || PassportNumber.errors)">
                                             <small class="text-danger" *ngIf="PassportNumber.errors['required']">Passport
                                                 number is required</small>
-                                            <small class="text-danger" *ngIf="PassportNumber.errors['pattern']">Passport
-                                                number must be of length 9</small>
+                                            <small class="text-danger" *ngIf="PassportNumber.errors['pattern']">Please enter a valid passport number</small>
                                         </div>
 
 

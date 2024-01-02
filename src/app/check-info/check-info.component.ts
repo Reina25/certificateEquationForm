@@ -27,6 +27,8 @@ export class CheckInfoComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private certService: CertServiceService, private http: HttpClient) { }
 
 
+
+
   fetchFilled() {
 
     

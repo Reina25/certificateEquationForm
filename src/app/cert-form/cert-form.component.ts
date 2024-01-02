@@ -43,17 +43,13 @@ export class CertFormComponent implements OnInit {
   q17 = "صورة عن الإقامة أيام الدراسة لغير اللبنانيين و الفلسطينيين"
 
 
-// place of birth
+ // place of birth
   selectedOption1: any 
   savedOption1: any;
 
-// country of birth
+ // country of birth
   selectedOption2: any 
   savedOption2: any;
-
-  // country code
-  selectedOptionExtra: any 
-  savedOptionExtra: any;
 
   // phone
   selectedOption3: any 
@@ -63,23 +59,14 @@ export class CertFormComponent implements OnInit {
   selectedOption4: any 
   savedOption4: any;
 
-    // personal email 
-    selectedOption5: any 
-    savedOption5: any;
+  // personal email 
+  selectedOption5: any 
+  savedOption5: any;
 
 
 
   
   noshow: boolean = false;
-
-
-
-
-
-
-
-
-
 
 
 
@@ -288,37 +275,7 @@ deleteFile6() {
 
 
 
- ////////////// mo3adale
-//  selectedFile7: UploadedFile | undefined;
 
-//  @ViewChild('fileInput7') fileInput7!: ElementRef;
-
-// onFileSelected7(event: any) {
-//  const file: File = event.target.files[0];
-//  if (file && (file.type === 'image/jpeg'|| file.type === 'application/pdf')) {
-//    const reader = new FileReader();
-//    reader.onload = () => {
-//      const uploadedFile: UploadedFile = {
-//        name: file.name,
-//        content: reader.result as string 
-//      };
-//      this.selectedFile7 = uploadedFile;
-//      localStorage.setItem('selectedFile7', JSON.stringify(this.selectedFile7));
-
-//    };
-//    reader.readAsDataURL(file);
-//  }
-// }
-
-// deleteFile7() {
-//  localStorage.setItem('selectedFile7', null);
-//  const storedFile7 = localStorage.getItem('selectedFile7');
-//  if (storedFile7) {
-//    this.selectedFile7 = JSON.parse(storedFile7);
-//  }
-//  this.fileInput7.nativeElement.value = '';
-
-// }
 
 
 
@@ -335,7 +292,7 @@ ngOnInit() {
   this.student = {
     fullName: this.certService.getSavedStudentName(),
     StudentID: this.certService.getSavedStudentID(),
-    program: this.certService.getSavedStudentProgram()
+    
 
   };
 
@@ -358,14 +315,6 @@ ngOnInit() {
     
   }
 
-  this.savedOptionExtra = sessionStorage.getItem('selectedOptionExtra');
-
-
-  if (this.savedOptionExtra) {
-    this.selectedOptionExtra = this.savedOptionExtra;
-    this.saveSelectionExtra(this.selectedOptionExtra);
-   
-  }
 
   this.savedOption3 = sessionStorage.getItem('selectedOption3');
 
@@ -392,18 +341,7 @@ ngOnInit() {
   }
 
 
-  // this.savedOption6 = sessionStorage.getItem('selectedOption6');
 
-  // if (this.savedOption6) {
-  //   this.selectedOption6 = this.savedOption6;
-  //   this.saveSelection6(this.selectedOption6);
-   
-  // }
-
-  // const storedFiles = localStorage.getItem('uploadedFiles');
-  // if (storedFiles) {
-  //   this.uploadedFiles = JSON.parse(storedFiles);
-  // }
 
   const storedFile1 = localStorage.getItem('selectedFile1');
   if (storedFile1) {
@@ -435,10 +373,7 @@ ngOnInit() {
     this.selectedFile6 = JSON.parse(storedFile6);
   }
 
-  // const storedFile7 = localStorage.getItem('selectedFile7');
-  // if (storedFile7) {
-  //   this.selectedFile7 = JSON.parse(storedFile7);
-  // }
+
 
 
 
@@ -464,12 +399,6 @@ saveSelection2(newValue: string) {
   sessionStorage.setItem('selectedOption2', this.selectedOption2);
 }
 
-saveSelectionExtra(newValue: string) {
-  this.selectedOptionExtra = newValue;
-  sessionStorage.setItem('selectedOptionExtra', this.selectedOptionExtra);
-
-}
-
 saveSelection3(newValue: string) {
   this.selectedOption3 = newValue;
   sessionStorage.setItem('selectedOption3', this.selectedOption3);
@@ -483,10 +412,7 @@ saveSelection5(newValue: string) {
   sessionStorage.setItem('selectedOption5', this.selectedOption5);
 }
 
-// saveSelection6(newValue: string) {
-//   this.selectedOption6 = newValue;
-//   sessionStorage.setItem('selectedOption6', this.selectedOption6);
-// }
+
 
 
 
